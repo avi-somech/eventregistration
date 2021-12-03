@@ -35,7 +35,7 @@ public class EventRegistrationApplication {
   public String greeting(){
     List<Person> avi = service.getAllPersons();
     
-    return "Hello world! this is very very cool";
+    return "Hello world! this is very very cool lets try to deploy automatically";
 
   }
   
