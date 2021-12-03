@@ -32,7 +32,7 @@ public class EventRegistrationApplication {
   @RequestMapping("/")
   public String greeting(){
     List<Person> avi = service.getAllPersons();
-    return "Hello world!";
+    return "Hello world! this is very very cool";
 
   }
   
