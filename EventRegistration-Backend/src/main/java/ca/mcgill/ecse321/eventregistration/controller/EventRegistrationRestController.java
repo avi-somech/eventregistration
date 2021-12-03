@@ -34,7 +34,7 @@ import ca.mcgill.ecse321.eventregistration.service.EventRegistrationService;
 public class EventRegistrationRestController {
 
 	@Autowired
-	private EventRegistrationService service;
+	public EventRegistrationService service;
 	
 	//HTTP - hyperlink text transfer protocol has 2 main methods for transfering info:
 	//1. get - retrieve data
