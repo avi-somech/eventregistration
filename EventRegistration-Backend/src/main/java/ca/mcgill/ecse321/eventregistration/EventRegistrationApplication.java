@@ -67,6 +67,15 @@ public class EventRegistrationApplication {
 		return service.createPerson(hi);
 	}
   
+  @RequestMapping(value = { "/abcpersons1/{name}", "/persons/{name}/" })
+	public Person createPersonHere1(@PathVariable("name") String name) throws Exception {
+	  if (name.equals("abe")) {
+		  throw new Exception("You cannot add abe over here");
+	  }
+	  String hi = name;
+		return service.createPerson(hi);
+	}
+  
   @RequestMapping("/controller/persons")
   public List<PersonDto> getPersonsDto(){
     return  controller.getAllPersons();
