@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     error += errorResponse.get("message").toString();
                 } catch (JSONException e) {
-                    error += e.getMessage();
-                    error += "oh boy";
+                   // error += e.getMessage();
+                    error += "You cannot add abe over here";
                 }
                 refreshErrorMessage();
             }

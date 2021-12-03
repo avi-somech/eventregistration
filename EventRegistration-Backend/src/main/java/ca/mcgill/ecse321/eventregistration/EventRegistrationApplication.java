@@ -49,7 +49,7 @@ public class EventRegistrationApplication {
   @RequestMapping(value = { "/abcpersons/{name}", "/persons/{name}/" })
 	public Person createPersonHere(@PathVariable("name") String name) throws Exception {
 	  if (name.equals("abe")) {
-		  throw new Exception("no chance your doing that");
+		  throw new Exception("You cannot add abe over here");
 	  }
 		return service.createPerson(name);
 	}
