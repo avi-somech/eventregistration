@@ -5,10 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ca.mcgill.ecse321.eventregistration_android.R;
@@ -18,24 +19,55 @@ import java.lang.String;
 
 public final class ContentMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
+
+  @NonNull
+  public final RelativeLayout contentMain;
+
+  @NonNull
+  public final TextView endtime;
 
   @NonNull
   public final TextView error;
 
   @NonNull
+  public final Spinner eventspinner;
+
+  @NonNull
+  public final TextView neweventDate;
+
+  @NonNull
+  public final EditText neweventName;
+
+  @NonNull
   public final EditText newpersonName;
 
-  private ContentMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView error,
-      @NonNull EditText newpersonName) {
+  @NonNull
+  public final Spinner personspinner;
+
+  @NonNull
+  public final TextView starttime;
+
+  private ContentMainBinding(@NonNull RelativeLayout rootView, @NonNull RelativeLayout contentMain,
+      @NonNull TextView endtime, @NonNull TextView error, @NonNull Spinner eventspinner,
+      @NonNull TextView neweventDate, @NonNull EditText neweventName,
+      @NonNull EditText newpersonName, @NonNull Spinner personspinner,
+      @NonNull TextView starttime) {
     this.rootView = rootView;
+    this.contentMain = contentMain;
+    this.endtime = endtime;
     this.error = error;
+    this.eventspinner = eventspinner;
+    this.neweventDate = neweventDate;
+    this.neweventName = neweventName;
     this.newpersonName = newpersonName;
+    this.personspinner = personspinner;
+    this.starttime = starttime;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -60,9 +92,35 @@ public final class ContentMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      RelativeLayout contentMain = (RelativeLayout) rootView;
+
+      id = R.id.endtime;
+      TextView endtime = ViewBindings.findChildViewById(rootView, id);
+      if (endtime == null) {
+        break missingId;
+      }
+
       id = R.id.error;
       TextView error = ViewBindings.findChildViewById(rootView, id);
       if (error == null) {
+        break missingId;
+      }
+
+      id = R.id.eventspinner;
+      Spinner eventspinner = ViewBindings.findChildViewById(rootView, id);
+      if (eventspinner == null) {
+        break missingId;
+      }
+
+      id = R.id.newevent_date;
+      TextView neweventDate = ViewBindings.findChildViewById(rootView, id);
+      if (neweventDate == null) {
+        break missingId;
+      }
+
+      id = R.id.newevent_name;
+      EditText neweventName = ViewBindings.findChildViewById(rootView, id);
+      if (neweventName == null) {
         break missingId;
       }
 
@@ -72,7 +130,20 @@ public final class ContentMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ContentMainBinding((ConstraintLayout) rootView, error, newpersonName);
+      id = R.id.personspinner;
+      Spinner personspinner = ViewBindings.findChildViewById(rootView, id);
+      if (personspinner == null) {
+        break missingId;
+      }
+
+      id = R.id.starttime;
+      TextView starttime = ViewBindings.findChildViewById(rootView, id);
+      if (starttime == null) {
+        break missingId;
+      }
+
+      return new ContentMainBinding((RelativeLayout) rootView, contentMain, endtime, error,
+          eventspinner, neweventDate, neweventName, newpersonName, personspinner, starttime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

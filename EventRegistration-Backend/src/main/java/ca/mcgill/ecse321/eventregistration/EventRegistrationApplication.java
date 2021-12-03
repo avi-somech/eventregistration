@@ -35,7 +35,6 @@ public class EventRegistrationApplication {
 
   @RequestMapping("/")
   public String greeting(){
-    List<Person> avi = service.getAllPersons();
     
     return "Hello world! this is very very cool lets try to deploy automatically";
 
@@ -46,12 +45,26 @@ public class EventRegistrationApplication {
     return  service.getAllPersons();
   }
   
+//  @PostMapping(value = { "/titles/create/{name}", "/titles/create/{name}/" })
+//	public TitleDto createTitle(@PathVariable("name") String name, @RequestParam String description,
+//			@RequestParam String genre, @RequestParam String isAvailable, @RequestParam String titleType)
+//			throws IllegalArgumentException {
+//
+//		Library library = getLibrary();
+//
+//		Title title = service.createTitle(name, description, genre, Boolean.parseBoolean(isAvailable),
+//				parseTitleType(titleType), library);
+//
+//		return convertToDto(title);
+//	}
+  
   @RequestMapping(value = { "/abcpersons/{name}", "/persons/{name}/" })
-	public Person createPersonHere(@PathVariable("name") String name) throws Exception {
+	public Person createPersonHere(@PathVariable("name") String name, @PathVariable String description) throws Exception {
 	  if (name.equals("abe")) {
 		  throw new Exception("You cannot add abe over here");
 	  }
-		return service.createPerson(name);
+	  String hi = name+description;
+		return service.createPerson(hi);
 	}
   
   @RequestMapping("/controller/persons")
