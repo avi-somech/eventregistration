@@ -14,6 +14,8 @@ import ca.mcgill.ecse321.eventregistration.dto.PersonDto;
 import ca.mcgill.ecse321.eventregistration.models.Person;
 import ca.mcgill.ecse321.eventregistration.service.EventRegistrationService;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
@@ -32,9 +34,21 @@ public class EventRegistrationApplication {
   @RequestMapping("/")
   public String greeting(){
     List<Person> avi = service.getAllPersons();
+    
     return "Hello world! this is very very cool";
 
   }
+  
+  @RequestMapping("/abcpersons")
+  public List<Person> getPersons(){
+    return  service.getAllPersons();
+  }
+  
+  @RequestMapping(value = { "/abcpersons/{name}", "/persons/{name}/" })
+	public Person createPersonHere(@PathVariable("name") String name) throws IllegalArgumentException {
+		return service.createPerson(name);
+	}
+  
   
 
   
