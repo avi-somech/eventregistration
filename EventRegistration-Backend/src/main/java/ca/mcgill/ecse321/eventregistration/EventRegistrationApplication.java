@@ -21,10 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @SpringBootApplication
 public class EventRegistrationApplication {
-	private EventRegistrationRestController controller;
 	
 	@Autowired
 	public EventRegistrationService service;
+	
+	@Autowired
+	public EventRegistrationRestController controller;
 
 
   public static void main(String[] args) {
@@ -48,6 +50,11 @@ public class EventRegistrationApplication {
 	public Person createPersonHere(@PathVariable("name") String name) throws IllegalArgumentException {
 		return service.createPerson(name);
 	}
+  
+  @RequestMapping("/controller/persons")
+  public List<PersonDto> getPersonsDto(){
+    return  controller.getAllPersons();
+  }
   
   
 
