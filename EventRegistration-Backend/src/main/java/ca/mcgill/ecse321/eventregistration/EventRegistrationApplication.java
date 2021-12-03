@@ -58,13 +58,16 @@ public class EventRegistrationApplication {
 //		return convertToDto(title);
 //	}
   
-  @RequestMapping(value = { "/abcpersons/{name}/{description}" })
-	public Person createPersonHere(@PathVariable("name") String name, @PathVariable String description) throws Exception {
+  @RequestMapping(value = { "/abcpersons/{name}" })
+	public Person createPersonHere(@PathVariable("name") String name) throws Exception {
 	  if (name.equals("abe")) {
 		  throw new Exception("You cannot add abe over here");
 	  }
-	  String hi = name+description;
-		return service.createPerson(hi);
+	  //capital Z
+	  String hi[] = name.split("-");
+	  String part1 = hi[0];
+	  String part2 = hi[1];
+		return service.createPerson(part1 + part2);
 	}
   
   @RequestMapping(value = { "/abcpersons1/{name}", "/persons/{name}/" })
