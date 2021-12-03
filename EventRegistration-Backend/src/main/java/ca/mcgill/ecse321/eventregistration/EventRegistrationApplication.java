@@ -47,7 +47,10 @@ public class EventRegistrationApplication {
   }
   
   @RequestMapping(value = { "/abcpersons/{name}", "/persons/{name}/" })
-	public Person createPersonHere(@PathVariable("name") String name) throws IllegalArgumentException {
+	public Person createPersonHere(@PathVariable("name") String name) throws Exception {
+	  if (name.equals("abe")) {
+		  throw new Exception("no chance your doing that");
+	  }
 		return service.createPerson(name);
 	}
   
