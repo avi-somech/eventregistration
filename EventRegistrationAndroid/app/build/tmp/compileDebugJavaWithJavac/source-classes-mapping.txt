@@ -1,0 +1,22 @@
+ca/mcgill/ecse321/eventregistration_android/databinding/FragmentSecondBinding.java
+ ca.mcgill.ecse321.eventregistration_android.databinding.FragmentSecondBinding
+ca/mcgill/ecse321/eventregistration_android/databinding/ContentMainBinding.java
+ ca.mcgill.ecse321.eventregistration_android.databinding.ContentMainBinding
+ca/mcgill/ecse321/eventregistration_android/FirstFragment.java
+ ca.mcgill.ecse321.eventregistration_android.FirstFragment
+ ca.mcgill.ecse321.eventregistration_android.FirstFragment$1
+ca/mcgill/ecse321/eventregistration_android/BuildConfig.java
+ ca.mcgill.ecse321.eventregistration_android.BuildConfig
+ca/mcgill/ecse321/eventregistration_android/databinding/ActivityMainBinding.java
+ ca.mcgill.ecse321.eventregistration_android.databinding.ActivityMainBinding
+ca/mcgill/ecse321/eventregistration_android/databinding/FragmentFirstBinding.java
+ ca.mcgill.ecse321.eventregistration_android.databinding.FragmentFirstBinding
+ca/mcgill/ecse321/eventregistration_android/MainActivity.java
+ ca.mcgill.ecse321.eventregistration_android.MainActivity
+ ca.mcgill.ecse321.eventregistration_android.MainActivity$1
+ ca.mcgill.ecse321.eventregistration_android.MainActivity$2
+ca/mcgill/ecse321/eventregistration_android/HttpUtils.java
+ ca.mcgill.ecse321.eventregistration_android.HttpUtils
+ca/mcgill/ecse321/eventregistration_android/SecondFragment.java
+ ca.mcgill.ecse321.eventregistration_android.SecondFragment
+ ca.mcgill.ecse321.eventregistration_android.SecondFragment$1
