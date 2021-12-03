@@ -58,7 +58,7 @@ public class EventRegistrationApplication {
 //		return convertToDto(title);
 //	}
   
-  @RequestMapping(value = { "/abcpersons/{name}", "/persons/{name}/" })
+  @RequestMapping(value = { "/abcpersons/{name}/{description}" })
 	public Person createPersonHere(@PathVariable("name") String name, @PathVariable String description) throws Exception {
 	  if (name.equals("abe")) {
 		  throw new Exception("You cannot add abe over here");
